@@ -1,6 +1,6 @@
 import React from 'react';
 
-const postForm = () =>{
+const PostForm = () =>{
     return(
         <div>
             <h3>Form</h3>
@@ -8,4 +8,4 @@ const postForm = () =>{
     )
 }
 
-export default postForm;
+export default PostForm;
