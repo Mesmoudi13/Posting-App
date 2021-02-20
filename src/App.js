@@ -10,6 +10,17 @@ class App extends Component{
       {content : 'Good night folks'}
     ]
   }
+
+
+  updatePost = (e) =>{
+    console.log('handle post');
+  }
+
+
+  addPost = (e) =>{
+    e.preventDefault();
+    console.log('Add post');
+  }
   render(){
     const {posts}= this.state;
     const postList = posts.map((post, index) =>{
@@ -19,7 +30,7 @@ class App extends Component{
       <div className="App">
            <h2>Posting App</h2>
            <div>
-             <PostForm />
+             <PostForm updatePost={this.updatePost} addPost={this.addPost}/>
              {postList}
            </div>
       </div>

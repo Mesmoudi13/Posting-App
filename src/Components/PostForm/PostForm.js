@@ -1,10 +1,12 @@
 import React from 'react';
 
-const PostForm = () =>{
+
+const PostForm = (props) =>{
     return(
-        <div>
-            <h3>Form</h3>
-        </div>
+            <form onSubmit={props.addPost}>
+                <input onChange={props.updatePost} type="text" placeholder="What's on your mind" />
+                <button type="submit">Post</button>
+            </form>
     )
 }
 
