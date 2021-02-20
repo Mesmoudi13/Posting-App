@@ -8,18 +8,27 @@ class App extends Component{
       {content : 'Good morning everybody'},
       {content : 'wassup guys how do you feel today'},
       {content : 'Good night folks'}
-    ]
+    ],
+    current : ''
   }
 
 
   updatePost = (e) =>{
-    console.log('handle post');
+    this.setState({
+      current : e.target.value
+    })
   }
 
 
   addPost = (e) =>{
-    e.preventDefault();
-    console.log('Add post');
+    e.preventDefault()
+    let current = this.state.current
+    let posts = this.state.posts
+    posts.push({content : current})
+    this.setState({
+      posts : posts,
+      current : ''
+    })
   }
   render(){
     const {posts}= this.state;
@@ -30,7 +39,7 @@ class App extends Component{
       <div className="App">
            <h2>Posting App</h2>
            <div>
-             <PostForm updatePost={this.updatePost} addPost={this.addPost}/>
+             <PostForm updatePost={this.updatePost} addPost={this.addPost} current={this.state.current}/>
              {postList}
            </div>
       </div>
