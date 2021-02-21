@@ -4,9 +4,13 @@ class PostList extends Component {
     render(){
         return(
             <Fragment>
-                <p>
-                    {this.props.post.content}
-                </p>
+                <div>
+                   <span>
+                      {this.props.post.content}
+                   </span>
+                   <button>Edit course</button>
+                   <button onClick={() =>this.props.deletePost(this.props.index)}>Delete</button>
+                </div>
             </Fragment>
         )
     }

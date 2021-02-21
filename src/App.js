@@ -24,16 +24,24 @@ class App extends Component{
     e.preventDefault()
     let current = this.state.current
     let posts = this.state.posts
-    posts.push({content : current})
+    posts.unshift({content : current})
     this.setState({
       posts : posts,
       current : ''
     })
   }
+
+  deletePost = (index) =>{
+     let posts = this.state.posts;
+     posts.splice(index,1);
+     this.setState({
+     posts : posts
+     })
+  }
   render(){
     const {posts}= this.state;
     const postList = posts.map((post, index) =>{
-      return <PostList post={post} key={index} />
+      return <PostList post={post} key={index} index={index} deletePost={this.deletePost}/>
     })
     return(
       <div className="App">
