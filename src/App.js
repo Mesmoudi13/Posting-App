@@ -1,6 +1,7 @@
 import React,{ Component } from 'react';
 import PostForm from './Components/PostForm/PostForm';
 import PostList from './Components/PostList/PostList';
+import './App.css'
 
 class App extends Component{
   state = {
@@ -51,13 +52,14 @@ class App extends Component{
   }
   render(){
     const {posts}= this.state;
-    const postList = posts.map((post, index) =>{
+    let length = this.state.posts.length;
+    const postList = length ? posts.map((post, index) =>{
       return <PostList post={post} key={index} index={index} deletePost={this.deletePost} editPost={this.editPost}/>
-    })
+    }): <h3>You have no posts</h3>
     return(
       <div className="App">
-           <h2>Posting App</h2>
-           <div>
+           <h1>Posting App</h1>
+           <div className="container">
              <PostForm updatePost={this.updatePost} addPost={this.addPost} current={this.state.current}/>
              {postList}
            </div>

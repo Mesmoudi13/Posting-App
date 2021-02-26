@@ -1,4 +1,8 @@
 import React,{ Component,Fragment } from 'react';
+import "./PostList.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTimes } from "@fortawesome/free-solid-svg-icons";
+import { faEdit } from "@fortawesome/free-solid-svg-icons";
 
 class PostList extends Component {
     state = {
@@ -20,12 +24,14 @@ class PostList extends Component {
     renderPost =() =>{
         return(
             <Fragment>
-                <div>
-                   <span>
+                <div className="content">
+                   <span className="posts">
                       {this.props.post.content}
                    </span>
-                   <button onClick={() =>this.toggleState()}>Edit course</button>
-                   <button onClick={() =>this.props.deletePost(this.props.index)}>Delete</button>
+                   <div>
+                        <button className="mainBtns" id="edit" onClick={() =>this.toggleState()}><FontAwesomeIcon icon={faEdit} size="xl" /></button>
+                        <button className="mainBtns" id="delete" onClick={() =>this.props.deletePost(this.props.index)}><FontAwesomeIcon icon={faTimes} size="xl" /></button>
+                    </div>
                 </div>
             </Fragment>
         )
@@ -33,9 +39,9 @@ class PostList extends Component {
 
     renderUpdateForm = () =>{
         return(
-            <form onSubmit={this.updatePost}>
-                <input type="text" defaultValue={this.props.post.content} ref={(v) => this.input = v}/>
-                <button>Update post</button>
+            <form className="updateForm" onSubmit={this.updatePost}>
+                <input className="updateInput" type="text" defaultValue={this.props.post.content} ref={(v) => this.input = v}/>
+                <button className="updateBtn">Update</button>
             </form>
         )
     }

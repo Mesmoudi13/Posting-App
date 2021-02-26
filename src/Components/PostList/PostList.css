@@ -1,0 +1,80 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    min-height: 20px;
+    align-content: center;
+    max-width: 800px;
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.2);
+    position: relative;
+    border-radius: 10px;
+}
+.posts{
+    width: 60%;
+}
+
+.mainBtns{
+    border-radius: 50%;
+    outline: unset;
+    border: unset;
+    color: #fff;
+    width: 20px;
+    height: 15px;
+    cursor: pointer;
+}
+#delete{
+    background-color: rgb(247, 55, 55);
+    position: absolute;
+    right: 5px;
+    top: 3px;
+    font-size: 10px;
+    font-weight: 700;
+}
+#delete:hover{
+    background-color: rgb(240, 79, 79);
+}
+#edit{
+    position: absolute;
+    right: 5px;
+    bottom: 3px;
+    font-size: 10px;
+    font-weight: 700;
+    background-color: rgb(31, 172, 31);
+    font-size: 10px;
+    font-weight: 700;
+}
+#edit:hover{
+    background-color: rgb(56, 177, 56);
+}
+
+.updateForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+.updateInput{
+    width: 400px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+.updateBtn{
+    width: 70px;
+    height: 35px;
+    align-self: center;
+    margin-left: 5px;
+    border-radius: 15px;
+    outline: none;
+    color: #fff;
+    background-color: rgb(31, 172, 31);
+    border: 1px;
+    font-weight: 700;
+    cursor: pointer;
+}

@@ -1,0 +1,36 @@
+.postForm{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+}
+.postInput{
+    width: 400px;
+    height: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    background-color: rgb(235, 235, 235);
+    outline: none;
+    border: none;
+    font-size: 15px;
+}
+.postBtn{
+    width: 70px;
+    height: 35px;
+    align-self: center;
+    margin-left: 5px;
+    border-radius: 15px;
+    outline: none;
+    color: #fff;
+    background-color: rgb(15, 160, 250);
+    border: 1px;
+    font-weight: 700;
+    cursor: pointer;
+}
+.postBtn:active{
+    background-color: rgb(6, 149, 197);
+    transition: all ease 0.5s;
+}
+.postBtn:hover{
+    background-color: rgb(0, 132, 255);
+}
