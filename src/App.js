@@ -38,10 +38,21 @@ class App extends Component{
      posts : posts
      })
   }
+
+
+  editPost = (index, value) =>{
+    let posts = this.state.posts;
+    let post = posts[index];
+    post ['content'] = value;
+    this.setState({
+      posts
+    })
+
+  }
   render(){
     const {posts}= this.state;
     const postList = posts.map((post, index) =>{
-      return <PostList post={post} key={index} index={index} deletePost={this.deletePost}/>
+      return <PostList post={post} key={index} index={index} deletePost={this.deletePost} editPost={this.editPost}/>
     })
     return(
       <div className="App">
